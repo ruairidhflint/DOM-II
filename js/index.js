@@ -89,9 +89,6 @@ element.addEventListener("click", function(x){
 }
 )
 
-
-
-
 // logo inflates
 
 const logo = document.querySelector('h1');
