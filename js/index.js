@@ -82,8 +82,14 @@ const buttonArray = Array.from(button);
 
 
 buttonArray.forEach(function (element){
-element.addEventListener("click", x => x.target.textContent = ":-(")
+element.addEventListener("click", function(x){
+  x.target.textContent = ":-("
+  x.stopPropagation();
 })
+}
+)
+
+
 
 
 // logo inflates
@@ -108,5 +114,13 @@ navigation.addEventListener("click", event => {
       event.preventDefault();
         })  
 
-        
 
+
+// 
+
+const bottomS = document.querySelector(".content-pick")
+
+bottomS.addEventListener("click", function(x){
+    console.log("bottom clicked")
+}
+)
