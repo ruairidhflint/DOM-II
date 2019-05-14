@@ -42,15 +42,71 @@ const footer = document.querySelector(".footer");
 footer.addEventListener("click", () => alert("Don't steal my content!"));
 
 
+// navBar.addEventListener("mouseover", () => {navBar.style = "color: red;"})
+
+const navBar = document.querySelectorAll(".nav a")
+let navLinks = Array.from(navBar);
+
+navLinks.forEach(function(element){
+    element.addEventListener("mouseover", (event) => event.target.style.color = "red")
+})
+navLinks.forEach(function(element){
+    element.addEventListener("mouseleave", (event) => event.target.style.color = "inherit")
+})
+
+// turn images black and white on click
+
+const allImages = document.querySelectorAll("img");
+const imageArray = Array.from(allImages);
+
+imageArray.forEach(function(element){
+    element.addEventListener("click", event => event.target.style.filter = "grayscale()")
+})
 
 
+// h2 given border on mouseover
+
+const headings = document.querySelectorAll("h2");
+const headingArray = Array.from(headings);
+
+headingArray.forEach(function(element){
+    element.addEventListener("mouseover", event => event.target.style = "border: 1px black dashed;");
+    element.addEventListener("mouseleave", event => event.target.style = "border: 0px black dashed;")
+})
 
 
+// give buttons error change
+
+const button = document.querySelectorAll(".btn");
+const buttonArray = Array.from(button);
 
 
-let navBar = document.querySelector(".nav")
+buttonArray.forEach(function (element){
+element.addEventListener("click", x => x.target.textContent = ":-(")
+})
 
-navBar.addEventListener("click", event => {
+
+// logo inflates
+
+const logo = document.querySelector('h1');
+
+logo.addEventListener("mouseover", expand);
+
+
+logo.addEventListener("mouseleave", x => {x.target.style.fontSize = "4rem"});
+
+function expand(x){
+    x.target.style.fontSize = "6rem";
+}
+
+
+/// NavBAR disabled. 
+
+const navigation = document.querySelector(".nav")
+
+navigation.addEventListener("click", event => {
       event.preventDefault();
         })  
+
+        
 
